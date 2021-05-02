@@ -3,8 +3,13 @@
 // value and end with the biggest one. If there are missing values, put in its places undefined.
 let arr = [4, 3, 0, 9];
 let newArr = [];
-for (let i = 0; i < 100; i++) {
-  newArr.push("undefined");
+newArr.length = Math.max(...arr) + 1;
+for (let i = Math.min(...arr); i < newArr.length; i++) {
+  newArr[i] = "undefined";
+  for (let j = 0; j < arr.length; j++) {
+    if (i === arr[j]) {
+      newArr[i] = arr[j];
+    }
+  }
 }
-console.log(newArr);
-for(let i = 0; i < )
+console.log(newArr.slice(Math.min(...arr)));
